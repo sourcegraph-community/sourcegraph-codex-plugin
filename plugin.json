@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "sourcegraph",
+  "version": "0.1.0",
+  "description": "Use Sourcegraph MCP from Codex for code search, navigation, history, and Deep Search.",
+  "author": {
+    "name": "Sourcegraph Community"
+  },
+  "homepage": "https://github.com/sourcegraph-community/sourcegraph-codex-plugin",
+  "repository": "https://github.com/sourcegraph-community/sourcegraph-codex-plugin",
+  "license": "MIT",
+  "keywords": ["sourcegraph", "code-search", "mcp", "deep-search"]
+}

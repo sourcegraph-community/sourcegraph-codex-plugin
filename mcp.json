@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "sourcegraph": {
+      "type": "streamable-http",
+      "url": "${SOURCEGRAPH_ENDPOINT}/.api/mcp/all"
+    }
+  }
+}
