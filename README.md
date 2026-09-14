@@ -1,6 +1,6 @@
 # Sourcegraph Codex Plugin
 
-An [Agent Plugin](https://agent-plugins.org) that wires Sourcegraph's MCP server into [Codex](https://developers.openai.com/codex), giving Codex disciplined code search, navigation, history, and Deep Search over your Sourcegraph-indexed repositories.
+An [Agent Plugin](https://agent-plugins.org) that wires Sourcegraph's MCP server into [Codex](https://developers.openai.com/codex). Giving Codex disciplined code search, navigation, history, and Deep Search over your Sourcegraph-indexed repositories.
 
 ## What's in here
 
