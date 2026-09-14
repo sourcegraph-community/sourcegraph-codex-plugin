@@ -65,6 +65,4 @@ Authentication is expected to happen via OAuth: Sourcegraph's MCP server support
 
 ## Known limitations
 
-The [Agent Plugins v1 spec](https://github.com/agentplugins/agent-plugins-spec) does not allow `${VAR}`-style expansion in a `streamable-http`/`sse` server's `url` (only `${PLUGIN_ROOT}`/`${PLUGIN_DATA}` are expanded, and only for `stdio` servers' `args`/`env`/`cwd`). Codex's implementation enforces this — `${SOURCEGRAPH_ENDPOINT}` is passed through literally, fails URL validation, and the MCP server entry is rejected at load time.
-
-
+The [Agent Plugins v1 spec](https://github.com/agentplugins/agent-plugins-spec) does not allow `${VAR}`-style expansion in a `streamable-http`/`sse` server's `url` (only `${PLUGIN_ROOT}`/`${PLUGIN_DATA}` are expanded, and only for `stdio` servers' `args`/`env`/`cwd`). Codex's implementation enforces this and substituting `${SOURCEGRAPH_ENDPOINT}` fails URL validation
