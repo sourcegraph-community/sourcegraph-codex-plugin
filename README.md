@@ -67,12 +67,4 @@ Authentication is expected to happen via OAuth: Sourcegraph's MCP server support
 
 The [Agent Plugins v1 spec](https://github.com/agentplugins/agent-plugins-spec) does not allow `${VAR}`-style expansion in a `streamable-http`/`sse` server's `url` (only `${PLUGIN_ROOT}`/`${PLUGIN_DATA}` are expanded, and only for `stdio` servers' `args`/`env`/`cwd`). Codex's implementation enforces this — `${SOURCEGRAPH_ENDPOINT}` is passed through literally, fails URL validation, and the MCP server entry is rejected at load time.
 
-**Until this is fixed, the plugin will not connect.** Options being considered:
-- Hardcode a single literal endpoint (works for sourcegraph.com, not for self-hosted/Enterprise instances with a custom URL).
-- Ship a small `stdio` bridge script that reads `SOURCEGRAPH_ENDPOINT` from its own process environment at runtime and proxies to the real HTTP endpoint.
 
-Contributions/opinions on which approach to take are welcome — see [issues](https://github.com/sourcegraph-community/sourcegraph-codex-plugin/issues).
-
-## License
-
-MIT
