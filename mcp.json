@@ -3,7 +3,7 @@
   "mcpServers": {
     "sourcegraph": {
       "type": "streamable-http",
-      "url": "${SOURCEGRAPH_ENDPOINT}/.api/mcp/all"
+      "url": "https://sourcegraph.com/.api/mcp/all"
     }
   }
 }
