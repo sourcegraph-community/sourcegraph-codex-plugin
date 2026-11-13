@@ -3,7 +3,22 @@
   "mcpServers": {
     "sourcegraph": {
       "type": "streamable-http",
-      "url": "https://sourcegraph.com/.api/mcp/all"
+      "url": "https://example.sourcegraph.com/.api/mcp/all",
+      "extensions": {
+        "com.openai": {
+          "urlTemplates": [
+            "https://{instance}.sourcegraph.com/.api/mcp/all",
+            "https://{instance}.sourcegraphcloud.com/.api/mcp/all"
+          ],
+          "auth": {
+            "type": "oauth",
+            "client": {
+              "mode": "dcr"
+            },
+            "defaultScopes": ["mcp"]
+          }
+        }
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "sourcegraph",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Use Sourcegraph MCP from Codex for code search, navigation, history, and Deep Search.",
   "author": {
     "name": "Sourcegraph Community"
@@ -9,5 +9,20 @@
   "homepage": "https://github.com/sourcegraph-community/sourcegraph-codex-plugin",
   "repository": "https://github.com/sourcegraph-community/sourcegraph-codex-plugin",
   "license": "MIT",
-  "keywords": ["sourcegraph", "code-search", "mcp", "deep-search"]
+  "keywords": ["sourcegraph", "code-search", "mcp", "deep-search"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Sourcegraph",
+        "shortDescription": "Search and navigate your code",
+        "longDescription": "Connect to your company's Sourcegraph Cloud instance to search code across all of your repositories, jump to definitions and references, explore commit and diff history, and run multi-step Deep Search research. Each workspace connects to its own instance at COMPANY.sourcegraph.com or COMPANY.sourcegraphcloud.com and signs in with OAuth. Results only include repositories the signed-in Sourcegraph user can access.",
+        "developerName": "Sourcegraph",
+        "category": "Developer Tools",
+        "websiteURL": "https://sourcegraph.com",
+        "supportURL": "https://help.sourcegraph.com",
+        "privacyPolicyURL": "https://sourcegraph.com/terms/privacy",
+        "termsOfServiceURL": "https://sourcegraph.com/terms"
+      }
+    }
+  }
 }
