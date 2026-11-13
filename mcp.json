@@ -3,7 +3,7 @@
   "mcpServers": {
     "sourcegraph": {
       "type": "streamable-http",
-      "url": "https://example.sourcegraph.com/.api/mcp/all",
+      "url": "https://codex-plugin.sourcegraphcloud.com/.api/mcp/all",
       "extensions": {
         "com.openai": {
           "urlTemplates": [

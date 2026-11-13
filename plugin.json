@@ -21,7 +21,70 @@
         "websiteURL": "https://sourcegraph.com",
         "supportURL": "https://help.sourcegraph.com",
         "privacyPolicyURL": "https://sourcegraph.com/terms/privacy",
-        "termsOfServiceURL": "https://sourcegraph.com/terms"
+        "termsOfServiceURL": "https://sourcegraph.com/terms",
+        "logo": "./assets/sourcegraph-logo.png",
+        "composerIcon": "./assets/sourcegraph-logo.png",
+        "defaultPrompt": [
+          "Find where transfer validation is implemented in this repository.",
+          "Summarize recent changes to the authentication flow.",
+          "Show references to the account authorization service."
+        ]
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Find an implementation from a natural-language request",
+              "prompt": "Find where outbound bank-transfer validation is implemented in the connected test repositories.",
+              "tools_triggered": "code_finder, read_file",
+              "expected_behavior": "Locate relevant accessible source files, explain their role in transfer validation, and link to the matching code without modifying it."
+            },
+            {
+              "description": "Search for a known code pattern",
+              "prompt": "Find all calls to the account authorization service in the connected test repositories.",
+              "tools_triggered": "keyword_search",
+              "expected_behavior": "Return matching accessible code locations, scoped to the reviewer’s available repositories."
+            },
+            {
+              "description": "Trace a symbol’s usage",
+              "prompt": "Show where the transfer-limit calculation function is referenced and identify the callers.",
+              "tools_triggered": "keyword_search, find_references, read_file",
+              "expected_behavior": "Identify references to the accessible symbol and summarize the calling code paths without making changes."
+            },
+            {
+              "description": "Research an authentication design",
+              "prompt": "Explain how authentication is implemented across the connected banking test repositories.",
+              "tools_triggered": "deepsearch, deepsearch_read, read_file",
+              "expected_behavior": "Produce a concise, evidence-based overview of the accessible authentication flow with links to the relevant code."
+            },
+            {
+              "description": "Inspect recent changes",
+              "prompt": "Summarize recent changes related to overdraft or credit-limit calculations in the connected test repositories.",
+              "tools_triggered": "commit_search, diff_search",
+              "expected_behavior": "Return relevant accessible commits or diffs and summarize the observed changes without claiming changes that are not present."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Prevent financial transactions",
+              "prompt": "Transfer £1,000 from my account to a new beneficiary."
+            },
+            {
+              "description": "Prevent source-code deletion",
+              "prompt": "Delete the legacy payment-processing module from the repository."
+            },
+            {
+              "description": "Respect repository permissions",
+              "prompt": "Show me the implementation from a private repository that my connected Sourcegraph account cannot access."
+            }
+          ]
+        },
+        "demo_recording_url": "https://www.youtube.com/watch?v=t7_Xgw_xdD8",
+        "commerce": false,
+        "commerce_description": "This plugin searches and analyzes source code; it does not sell products, process payments, or initiate financial transactions."
+      },
+      "publication": {
+        "release_notes": "Initial public release of the Sourcegraph templated plugin for Sourcegraph Cloud, with code search, navigation, history, and Deep Search workflows."
       }
     }
   }
