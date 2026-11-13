@@ -64,8 +64,3 @@ Listing metadata, such as the display name, description, and support links, live
 ## Known limitations
 
 - Only Sourcegraph Cloud instances on `*.sourcegraph.com` and `*.sourcegraphcloud.com` subdomains are supported. Every URL template must contain a placeholder, so `https://sourcegraph.com` itself and self-hosted instances on custom domains cannot be selected.
-- Codex CLI (checked with 0.169.0) rejects the `extensions` block in an `mcp.json` server entry (``unknown field `extensions`, expected `url` or `headers` ``). Installing this directory locally in Codex loads the plugin and its skill but skips the MCP server. To use it locally, add the server yourself, replacing `acme` with your instance. Codex then opens a browser to sign in to Sourcegraph; run `codex mcp login sourcegraph` to sign in again later.
-
-  ```sh
-  codex mcp add sourcegraph --url https://acme.sourcegraphcloud.com/.api/mcp/all
-  ```
